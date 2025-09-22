@@ -1,0 +1,89 @@
+.App {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  margin-bottom: 40px;
+}
+
+.App-header h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.upload-zone {
+  border: 3px dashed #3498db;
+  border-radius: 10px;
+  padding: 40px;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.upload-zone:hover, .upload-zone.active {
+  border-color: #2980b9;
+  background-color: #f8f9fa;
+}
+
+.upload-label {
+  display: block;
+  font-size: 18px;
+  color: #2c3e50;
+  cursor: pointer;
+}
+
+.results {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.score-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.score {
+  display: inline-block;
+  padding: 20px;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  min-width: 80px;
+  min-height: 80px;
+  line-height: 40px;
+}
+
+.score.good { background-color: #27ae60; }
+.score.medium { background-color: #f39c12; }
+.score.poor { background-color: #e74c3c; }
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.feedback-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keyword {
+  background: #3498db;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
