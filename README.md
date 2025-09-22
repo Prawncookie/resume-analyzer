@@ -2,7 +2,7 @@
 A tool to analyze resumes using AI, built from scratch with no coding experience, aimed at optimizing resumes for UAE tech jobs.
 
 ## Why It’s Special
-- Built by a Comp Sci student (no prior coding skills) for UAE job seekers targeting 8–10K AED/month roles.
+- Built by a Comp Sci student (no prior coding skills) for UAE job seekers.
 - Uses React, Node.js, and OpenAI to score resumes and suggest improvements.
 - Learned Git, APIs, and debugging through trial and error.
 
@@ -37,4 +37,5 @@ A tool to analyze resumes using AI, built from scratch with no coding experience
 [To be added post-deployment]
 
 ## Goal
-Land a high-paying software dev job (8–10K AED/month) in the UAE, leveraging this project and my Comp Sci degree (Cybersecurity/IT honors).
+Land a high-paying software dev job in the UAE, leveraging this project and several others to come and my Comp Sci degree (Cybersecurity/IT honors).
+
