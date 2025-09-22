@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { motion } from 'framer-motion'; // Add import
 
 interface Props {
   onAnalysis: (analysis: any) => void;
@@ -46,11 +47,15 @@ const FileUpload: React.FC<Props> = ({ onAnalysis, loading, setLoading }) => {
   };
 
   return (
-    <div className={`upload-zone ${dragActive ? 'active' : ''}`}
-         onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
-         onDragLeave={() => setDragActive(false)}
-         onDrop={handleDrop}>
-      
+    <motion.div
+      className={`upload-zone ${dragActive ? 'active' : ''}`}
+      onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
+      onDragLeave={() => setDragActive(false)}
+      onDrop={handleDrop}
+      initial={{ opacity: 0, y: 20 }} // Start hidden, slightly below
+      animate={{ opacity: 1, y: 0 }} // Fade in, slide up
+      transition={{ duration: 0.5 }} // Smooth 0.5s animation
+    >
       <input 
         type="file" 
         accept=".pdf,.docx" 
@@ -64,7 +69,7 @@ const FileUpload: React.FC<Props> = ({ onAnalysis, loading, setLoading }) => {
         {loading ? 'Analyzing...' : 'Click or drag resume here'}
         <p>Supports PDF and DOCX files</p>
       </label>
-    </div>
+    </motion.div>
   );
 };
 

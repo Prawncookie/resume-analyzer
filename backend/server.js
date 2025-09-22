@@ -52,7 +52,9 @@ async function analyzeResume(resumeText) {
     "strengths": ["strength1", "strength2"],
     "weaknesses": ["weakness1", "weakness2"],
     "suggestions": ["suggestion1", "suggestion2"],
-    "keywords": ["keyword1", "keyword2"]
+    "keywords": ["keyword1", "keyword2"],
+    "atsMatch": number (0-100, % match to UAE tech job keywords like AWS, Cybersecurity),
+    "missingKeywords": ["missing1", "missing2"]
   }
   `;
 
@@ -71,7 +73,9 @@ async function analyzeResume(resumeText) {
     strengths: ["Strong technical skills", "Relevant experience"],
     weaknesses: ["Formatting issues", "Limited project details"],
     suggestions: ["Add quantifiable achievements", "Use action verbs"],
-    keywords: ["JavaScript", "React", "Node.js"]
+    keywords: ["JavaScript", "React", "Node.js"],
+    atsMatch: 75, // ATS compatibility for UAE tech jobs
+    missingKeywords: ["AWS", "Cybersecurity", "Dubai Smart City"] // Suggested keywords for UAE roles
   };
 }
 
