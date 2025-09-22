@@ -3,15 +3,52 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme switch */
+  background-color: #ffffff; /* Light mode */
+  color: #2c3e50;
+}
+
+.App.dark {
+  background-color: #1a1a1a; /* Dark mode, UAE black */
+  color: #f0f0f0; /* Light text */
 }
 
 .App-header {
   margin-bottom: 40px;
+  position: relative; /* For toggle positioning */
 }
 
 .App-header h1 {
-  color: #2c3e50;
-  margin-bottom: 10px;
+  color: #2c3e50; /* Default */
+}
+
+.App.dark .App-header h1 {
+  color: #ffffff; /* UAE white in dark mode */
+}
+
+.App-header p {
+  color: #34495e;
+}
+
+.App.dark .App-header p {
+  color: #b0b0b0;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #e31e25; /* UAE red */
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.App.dark .theme-toggle {
+  background: #2ecc71; /* UAE green */
 }
 
 .upload-zone {
@@ -21,18 +58,32 @@
   margin: 20px 0;
   transition: all 0.3s ease;
   cursor: pointer;
+  background-color: #f8f9fa;
+}
+
+.App.dark .upload-zone {
+  border-color: #2ecc71; /* UAE green in dark mode */
+  background-color: #2a2a2a;
 }
 
 .upload-zone:hover, .upload-zone.active {
   border-color: #2980b9;
-  background-color: #f8f9fa;
+  background-color: #e8ecef;
+}
+
+.App.dark .upload-zone:hover, .App.dark .upload-zone.active {
+  border-color: #27ae60;
+  background-color: #3a3a3a;
 }
 
 .upload-label {
   display: block;
   font-size: 18px;
   color: #2c3e50;
-  cursor: pointer;
+}
+
+.App.dark .upload-label {
+  color: #f0f0f0;
 }
 
 .results {
@@ -57,9 +108,9 @@
   line-height: 40px;
 }
 
-.score.good { background-color: #27ae60; }
+.score.good { background-color: #27ae60; } /* UAE green */
 .score.medium { background-color: #f39c12; }
-.score.poor { background-color: #e74c3c; }
+.score.poor { background-color: #e74c3c; } /* UAE red */
 
 .feedback-grid {
   display: grid;
@@ -74,6 +125,11 @@
   border-left: 4px solid #3498db;
 }
 
+.App.dark .feedback-section {
+  background: #2a2a2a;
+  border-left-color: #2ecc71;
+}
+
 .keywords {
   display: flex;
   flex-wrap: wrap;
@@ -86,4 +142,8 @@
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 14px;
+}
+
+.App.dark .keyword {
+  background: #2ecc71; /* UAE green */
 }
