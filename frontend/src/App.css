@@ -1,16 +1,34 @@
+/* Ensure full-page coverage */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .App {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  min-height: 100vh; /* Full viewport height */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme switch */
   background-color: #ffffff; /* Light mode */
   color: #2c3e50;
 }
 
 .App.dark {
-  background-color: #1a1a1a; /* Dark mode, UAE black */
+  background-color: #1a1a1a; /* UAE black */
   color: #f0f0f0; /* Light text */
+}
+
+/* Ensure body switches with App.dark */
+body {
+  background-color: #ffffff; /* Light mode */
+}
+
+.App.dark body {
+  background-color: #1a1a1a; /* UAE black */
 }
 
 .App-header {
@@ -23,7 +41,7 @@
 }
 
 .App.dark .App-header h1 {
-  color: #ffffff; /* UAE white in dark mode */
+  color: #ffffff; /* UAE white */
 }
 
 .App-header p {
@@ -62,7 +80,7 @@
 }
 
 .App.dark .upload-zone {
-  border-color: #2ecc71; /* UAE green in dark mode */
+  border-color: #2ecc71; /* UAE green */
   background-color: #2a2a2a;
 }
 
@@ -127,7 +145,7 @@
 
 .App.dark .feedback-section {
   background: #2a2a2a;
-  border-left-color: #2ecc71;
+  border-left-color: #2ecc71; /* UAE green */
 }
 
 .keywords {
@@ -145,5 +163,18 @@
 }
 
 .App.dark .keyword {
+  background: #2ecc71; /* UAE green */
+}
+
+.ats-score {
+  background: #3498db;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.App.dark .ats-score {
   background: #2ecc71; /* UAE green */
 }
