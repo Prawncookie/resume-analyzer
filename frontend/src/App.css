@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+  background-color: #ffffff; /* Light mode */
 }
 
 .App {
@@ -11,36 +12,28 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  min-height: 100vh; /* Full viewport height */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme switch */
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
   background-color: #ffffff; /* Light mode */
   color: #2c3e50;
 }
 
-.App.dark {
+.App.dark-mode {
   background-color: #1a1a1a; /* UAE black */
-  color: #f0f0f0; /* Light text */
+  color: #f0f0f0;
 }
 
-/* Ensure body switches with App.dark */
-body {
-  background-color: #ffffff; /* Light mode */
-}
-
-.App.dark body {
-  background-color: #1a1a1a; /* UAE black */
-}
-
+/* Header styles */
 .App-header {
   margin-bottom: 40px;
-  position: relative; /* For toggle positioning */
+  position: relative;
 }
 
 .App-header h1 {
-  color: #2c3e50; /* Default */
+  color: #2c3e50;
 }
 
-.App.dark .App-header h1 {
+.App.dark-mode .App-header h1 {
   color: #ffffff; /* UAE white */
 }
 
@@ -48,7 +41,7 @@ body {
   color: #34495e;
 }
 
-.App.dark .App-header p {
+.App.dark-mode .App-header p {
   color: #b0b0b0;
 }
 
@@ -65,10 +58,11 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.App.dark .theme-toggle {
+.App.dark-mode .theme-toggle {
   background: #2ecc71; /* UAE green */
 }
 
+/* Upload zone */
 .upload-zone {
   border: 3px dashed #3498db;
   border-radius: 10px;
@@ -79,7 +73,7 @@ body {
   background-color: #f8f9fa;
 }
 
-.App.dark .upload-zone {
+.App.dark-mode .upload-zone {
   border-color: #2ecc71; /* UAE green */
   background-color: #2a2a2a;
 }
@@ -89,7 +83,7 @@ body {
   background-color: #e8ecef;
 }
 
-.App.dark .upload-zone:hover, .App.dark .upload-zone.active {
+.App.dark-mode .upload-zone:hover, .App.dark-mode .upload-zone.active {
   border-color: #27ae60;
   background-color: #3a3a3a;
 }
@@ -100,10 +94,28 @@ body {
   color: #2c3e50;
 }
 
-.App.dark .upload-label {
+.App.dark-mode .upload-label {
   color: #f0f0f0;
 }
 
+/* Error and loading */
+.error-message {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  color: #1976d2;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Results */
 .results {
   margin-top: 40px;
   text-align: left;
@@ -126,9 +138,15 @@ body {
   line-height: 40px;
 }
 
-.score.good { background-color: #27ae60; } /* UAE green */
-.score.medium { background-color: #f39c12; }
-.score.poor { background-color: #e74c3c; } /* UAE red */
+.score.good {
+  background-color: #27ae60; /* UAE green */
+}
+.score.medium {
+  background-color: #f39c12;
+}
+.score.poor {
+  background-color: #e74c3c; /* UAE red */
+}
 
 .feedback-grid {
   display: grid;
@@ -143,7 +161,7 @@ body {
   border-left: 4px solid #3498db;
 }
 
-.App.dark .feedback-section {
+.App.dark-mode .feedback-section {
   background: #2a2a2a;
   border-left-color: #2ecc71; /* UAE green */
 }
@@ -162,7 +180,7 @@ body {
   font-size: 14px;
 }
 
-.App.dark .keyword {
+.App.dark-mode .keyword {
   background: #2ecc71; /* UAE green */
 }
 
@@ -175,6 +193,6 @@ body {
   margin-bottom: 10px;
 }
 
-.App.dark .ats-score {
+.App.dark-mode .ats-score {
   background: #2ecc71; /* UAE green */
 }

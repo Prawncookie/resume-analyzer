@@ -1,45 +1,63 @@
 import React, { useState } from 'react';
-import { Sun, Moon } from 'lucide-react'; // Add icons for toggle
+import { Sun, Moon } from 'lucide-react';
 import './App.css';
 import FileUpload from './components/FileUpload';
 import Results from './components/Results';
 
-// This defines what data structure we expect back from OpenAI
 interface AnalysisResult {
   score: number;
   strengths: string[];
   weaknesses: string[];
   suggestions: string[];
   keywords: string[];
-  atsMatch: number; // For ATS matcher
-  missingKeywords: string[]; // For ATS matcher
+  atsMatch: number;
 }
 
-// These are like variables that can change and update the UI
 function App() {
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [loading, setLoading] = useState(false);
-  const [darkMode, setDarkMode] = useState(false); // Add dark mode state
+  const [error, setError] = useState<string | null>(null);
+  const [darkMode, setDarkMode] = useState(false);
 
-  // The Main Layout you feel like typa shi the user actually gon see... you feel me
+  const handleAnalysis = (result: AnalysisResult | null) => {
+    console.log('Received analysis:', result, 'Error:', error);
+    setAnalysis(result);
+    if (!result && error) {
+      console.log('Setting error in App.tsx:', error);
+    }
+  };
+
   return (
-    <div className={`App ${darkMode ? 'dark' : ''}`}>
+    <div className={`App ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       <header className="App-header">
         <h1>AI Resume Analyzer</h1>
         <p>Optimize your resume for UAE tech jobs</p>
-        <button onClick={() => setDarkMode(!darkMode)} className="theme-toggle">
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="theme-toggle"
+          aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
           {darkMode ? <Sun size={20} /> : <Moon size={20} />}
         </button>
       </header>
-      
+
       <main>
-        <FileUpload 
-          onAnalysis={setAnalysis} 
+        {error && (
+          <div className="error-message" role="alert">
+            {error}
+          </div>
+        )}
+        <FileUpload
+          onAnalysis={handleAnalysis}
           loading={loading}
           setLoading={setLoading}
+          setError={(err) => {
+            console.log('FileUpload setError:', err);
+            setError(err);
+          }}
         />
-        
-        {analysis && <Results analysis={analysis} />}
+        {loading && <div className="loading">Analyzing your resume...</div>}
+        {analysis && !error && <Results analysis={analysis} />}
       </main>
     </div>
   );
