@@ -6,16 +6,24 @@ A modern, user-friendly application designed to analyze resumes by uploading fil
 Features:
 
 File Upload: Seamlessly upload resumes (PDF, DOCX) via a drag-and-drop interface.
+
 Resume Analysis: Extracts and analyzes key details like skills, experience, and education using a robust backend API.
+
 Responsive UI: A clean, modern frontend with UAE-themed colors (inspired by the Emirates' elegance) and dark mode support.
+
 Fast Processing: Powered by Node.js for efficient backend handling of file uploads and data parsing.
+
 Results Dashboard: Displays detailed feedback on resume strengths and areas for improvement.
 
 Tech Stack
 Frontend: React, TypeScript, Tailwind CSS.
+
 Backend: Node.js, Express.
+
 Dependencies: Managed via npm (see package.json for details).
+
 Styling: Custom UAE-inspired design with dark mode toggle.
+
 File Handling: Supports PDF and DOCX uploads with parsing logic.
 
 Getting Started:
