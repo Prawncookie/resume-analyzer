@@ -24,6 +24,8 @@ Backend: Node.js, Express.
 
 Dependencies: Managed via npm (see package.json for details).
 
+AI Integration: Google Gemini API (for resume parsing and analysis)
+
 Styling: Custom UAE-inspired design with dark mode toggle.
 
 File Handling: Supports PDF and DOCX uploads with parsing logic.
