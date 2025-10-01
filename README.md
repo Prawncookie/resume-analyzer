@@ -44,7 +44,7 @@ Git.
 Installation:
 
 1. Clone the repository:
-<img width="1202" height="213" alt="Screenshot 2025-09-30 153707" src="https://github.com/user-attachments/assets/4e772a76-752d-42ce-b1c3-561fc979f13a" />
+<img width="1396" height="180" alt="Screenshot 2025-10-02 002914" src="https://github.com/user-attachments/assets/9d4d4684-c3d5-48c0-a5c9-8f2c1b84ea93" />
 
 2. Install backend dependencies:
 <img width="1215" height="241" alt="Screenshot 2025-09-30 153835" src="https://github.com/user-attachments/assets/7ff6d6b6-5a30-4740-b5bd-80f89eb3a607" />
